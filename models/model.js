@@ -3,7 +3,8 @@ var Sequelize = require("sequelize");
 
 // configure sequelize instance
 // be sure to run mysql command to create database instance
-var sequelize = new Sequelize("database_name", "root", "andyhemysql123", {
+var password = "andyhemysql123";
+var sequelize = new Sequelize("database_name", "root", password, {
   host: "localhost",
   dialect: "mysql",
   pool: {
