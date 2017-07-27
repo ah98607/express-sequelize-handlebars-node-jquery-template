@@ -17,11 +17,6 @@ var sequelize = new Sequelize("database_name", "root", password, {
 // define table structure
 var myTable = sequelize.define("table_name",
 {
-  id: {
-    type: Sequelize.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
-  },
   name: {
     type: Sequelize.STRING
   }
@@ -51,13 +46,38 @@ var model = {
       callback(result);
     });
   },
-  add: function(callback) {
-    myTable.create({
-      id: 1,
-      name: character.name
+  deleteById: function(itemId, callback) {
+    myTable.destroy(
+    {
+      where: {
+        id: itemId
+      }
     }).then(function(result) {
       callback(result);
     });
+  },
+  add: function(newName, callback) {
+    myTable.create({
+      id: 1,
+      name: newName
+    }).then(function(result) {
+      callback(result);
+    });
+  },
+  update: function(itemId, callback) {
+    myTable.update(
+    {
+      isDone: true
+    }
+    , {
+      where: 
+      {
+        id: itemId
+      }
+    }).then(function (result) {
+      console.log(result);
+      callback(result);
+    })
   }
 };
 
