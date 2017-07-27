@@ -1,0 +1,29 @@
+{
+  "name": "express-sequelize-handlebars-node-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ah98607/express-sequelize-handlebars-node-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ah98607/express-sequelize-handlebars-node-template/issues"
+  },
+  "homepage": "https://github.com/ah98607/express-sequelize-handlebars-node-template#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.10",
+    "method-override": "^2.3.9",
+    "mysql2": "^1.3.6",
+    "sequelize": "^4.4.2"
+  }
+}
