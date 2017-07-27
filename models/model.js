@@ -35,34 +35,30 @@ myTable.sync();
 // combined model and ORM
 var model = {
   all: function(callback) {
-    myTable.findAll(
-    {
-      // empty constraint
+    myTable.findAll({// empty constraint
     }).then(function(result) {
       callback(result);
     });
   },
-  search: function(callback) {
-    myTable.findAll(
+  search: function(name, callback) {
+    myTable.findAll({
+      where:
       {
-        where:
-        {
-          name: name
-        }
-      }).then(function(result) {
-        callback(result);
-      });
-    },
-    add: function(callback) {
-      myTable.create(
-      {
-        id: 1,
-        name: character.name
-      }).then(function(result) {
-        callback(result);
-      });
-    }
-  };
+        name: name
+      }
+    }).then(function(result) {
+      callback(result);
+    });
+  },
+  add: function(callback) {
+    myTable.create({
+      id: 1,
+      name: character.name
+    }).then(function(result) {
+      callback(result);
+    });
+  }
+};
 
 // export model to controller
 module.exports = model;
