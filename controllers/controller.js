@@ -1,23 +1,27 @@
-// import model
-var model = require("../models/model.js");
+"use strict";
 
-// import npm module
-var express = require("express");
-var bodyParser = require("body-parser");
+(function() {
+	// import model
+	var model = require("../models/model.js");
 
-// create router instance
-var router = express.Router();
+	// import npm module
+	var express = require("express");
+	var bodyParser = require("body-parser");
 
-// configure router
-router.get("/", function(req, res) {
-  model.all(function(data) {
-    console.log(data);
-    var objRendered = {
-      data: "Hello"
-    };
-    res.render("index", objRendered);
-  });
-});
+	// create router instance
+	var router = express.Router();
 
-// export route for server.js
-module.exports = router;
+	// configure router
+	router.get("/", function(req, res) {
+		model.all(function(data) {
+			console.log(data);
+			var objRendered = {
+				data: "Hello"
+			};
+			res.render("index", objRendered);
+		});
+	});
+
+	// export route for server.js
+	module.exports = router;
+})();
