@@ -21,7 +21,7 @@
   var myTable = sequelize.define("table_name",
   {
     name: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING
     }
   },
   {
