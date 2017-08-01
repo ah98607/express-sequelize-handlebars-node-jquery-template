@@ -21,7 +21,7 @@
   var myTable = sequelize.define("table_name",
   {
     name: {
-      type: DataTypes.STRING
+      type: Sequelize.STRING
     }
   },
   {
@@ -78,7 +78,6 @@
           id: itemId
         }
       }).then(function (result) {
-        console.log(result);
         callback(result);
       })
     }
